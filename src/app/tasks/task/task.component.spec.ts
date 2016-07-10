@@ -12,9 +12,9 @@ import {
 
 import { TaskComponent } from './task.component';
 
-describe('Component: Task', () => {
+/*describe('Component: Task', () => {
   it('should create an instance', () => {
     let component = new TaskComponent();
     expect(component).toBeTruthy();
   });
-});
+});*/

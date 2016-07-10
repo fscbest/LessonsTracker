@@ -9,4 +9,3 @@ export class Task {
   id: number;
   color: string;
 }
-

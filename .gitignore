@@ -35,8 +35,7 @@ Thumbs.db
 src/*/*.js
 *.map
 
-src/app/task/task.component.js
-src/app/task/task.js
-src/app/task/task.component.spec.js
-src/app/task/tasks.service.spec.js
-src/app/task/tasks.service.js
+*.component.js
+*.component.spec.js
+*.service.js
+*.service.spec.js

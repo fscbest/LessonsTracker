@@ -28,6 +28,9 @@ var barrels = [
     'app',
     'app/shared',
     'app/task',
+    'app/task/tasks-list',
+    'app/tasks/tasks-list',
+    'app/tasks/task',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {

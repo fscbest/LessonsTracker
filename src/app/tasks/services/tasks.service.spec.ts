@@ -6,7 +6,7 @@ import {
   expect, it, xit,
   async, inject
 } from '@angular/core/testing';
-import { TasksService } from './tasks.service';
+import { TasksService } from './tasks.service.ts';
 
 describe('Tasks Service', () => {
   beforeEachProviders(() => [TasksService]);
