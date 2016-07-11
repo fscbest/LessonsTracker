@@ -7,13 +7,13 @@ import { TasksService } from './../services/tasks.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-tasks-list',
-  templateUrl: 'tasks-list.component.html',
-  styleUrls: ['tasks-list.component.css'],
+  selector: 'app-task-list',
+  templateUrl: 'task-list.component.html',
+  styleUrls: ['task-list.component.css'],
   providers: [TasksService],
   directives: [TaskComponent]
 })
-export class TasksListComponent implements OnInit {
+export class TaskListComponent implements OnInit {
   tasks = [];
 
   constructor(private _tasksService: TasksService) {}

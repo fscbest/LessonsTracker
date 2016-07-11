@@ -10,7 +10,7 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { TasksListComponent } from './tasks-list.component';
+import { TaskListComponent } from './task-list.component.ts';
 
 /*describe('Component: TasksList', () => {
   it('should create an instance', () => {

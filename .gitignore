@@ -44,3 +44,6 @@ src/app/tasks/task.js
 src/app/tasks/task.js
 src/app/tasks/task-template.js
 src/app/tasks/task.js
+src/system-config.js
+src/app/tasks/task-list/shared/index.js
+src/app/tasks/task-list/index.js

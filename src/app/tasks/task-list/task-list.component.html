@@ -1,0 +1,10 @@
+<div class="col-md-3">
+  <div class="list-group">
+    <button *ngFor="let task of tasks" type="button" class="list-group-item">
+      <app-task [task]="task"></app-task>
+    </button>
+  </div>
+</div>
+
+
+

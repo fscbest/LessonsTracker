@@ -28,8 +28,8 @@ var barrels = [
     'app',
     'app/shared',
     'app/task',
-    'app/task/tasks-list',
-    'app/tasks/tasks-list',
+    'app/task/task-list',
+    'app/tasks/task-list',
     'app/tasks/task',
     'app/tasks/task-template',
 ];

@@ -1,6 +1,15 @@
-<div>
-
-  {{ task.title}}
-  {{ task.price}}
-
+<div class="button" (click)="onClick()">
+  <table>
+    <tbody>
+    <tr>
+      <th style="width: 70%">{{task.title}}</th>
+      <th style="width: 15%">{{task.price}}$</th>
+      <th style="width: 15%"><i class="glyphicon glyphicon-pencil clickable"></i></th>
+      <th style="width: 10%"><i (click)="deleteTask(task)" class="glyphicon glyphicon-trash clickable"></i></th>
+    </tr>
+    </tbody>
+  </table>
 </div>
+
+
+

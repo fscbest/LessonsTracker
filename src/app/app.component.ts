@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { TasksListComponent } from './tasks/tasks-list/tasks-list.component';
+import { TaskListComponent } from './tasks/task-list/task-list.component';
 
 
 @Component({
@@ -8,8 +8,8 @@ import { TasksListComponent } from './tasks/tasks-list/tasks-list.component';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [TasksListComponent]
+  directives: [TaskListComponent]
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'app works!!!!';
 }
