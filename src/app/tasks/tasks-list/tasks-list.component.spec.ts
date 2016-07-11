@@ -12,9 +12,9 @@ import {
 
 import { TasksListComponent } from './tasks-list.component';
 
-describe('Component: TasksList', () => {
+/*describe('Component: TasksList', () => {
   it('should create an instance', () => {
     let component = new TasksListComponent();
     expect(component).toBeTruthy();
   });
-});
+});*/
