@@ -7,7 +7,8 @@ export class Provider {
     public notes: string,
     public id: number,
     public color: string,
-    public billingPeriod: number
+    public billingPeriod: number,
+    public nickname: string
   )
   {}
 }

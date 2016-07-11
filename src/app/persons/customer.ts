@@ -6,7 +6,8 @@ export class Customer {
     public lastName: string,
     public notes: string,
     public id: number,
-    public color: string
+    public color: string,
+    public nickname: string
   )
   {}
 }

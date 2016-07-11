@@ -32,6 +32,7 @@ var barrels = [
     'app/tasks/task-list',
     'app/tasks/task',
     'app/tasks/task-template',
+    'app/navbar',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {

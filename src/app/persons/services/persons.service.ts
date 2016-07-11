@@ -24,7 +24,8 @@ export class PersonsService {
       lastName: "Child",
       notes: "Good child",
       id: 1,
-      color: "black"
+      color: "black",
+      nickname: "nick"
     }
 
 
@@ -39,7 +40,8 @@ export class PersonsService {
         lastName: "Child",
         notes: "Good child",
         id: 1,
-        color: "black"
+        color: "black",
+        nickname: "nick1stCh"
       },
       {
         userId:1,
@@ -48,7 +50,8 @@ export class PersonsService {
         lastName: "Child",
         notes: "Good child",
         id: 1,
-        color: "black"
+        color: "black",
+        nickname: "nick2stCh"
       },
       {
         userId:1,
@@ -57,7 +60,8 @@ export class PersonsService {
         lastName: "Child",
         notes: "Good child",
         id: 1,
-        color: "black"
+        color: "black",
+        nickname: "nick3stCh"
       }]
   }
 
@@ -70,7 +74,8 @@ export class PersonsService {
       notes: "Good Provider",
       id: 1,
       color: "black",
-      billingPeriod: 1
+      billingPeriod: 1,
+      nickname: "nick1Prov"
     }
 
 
@@ -86,7 +91,8 @@ export class PersonsService {
         notes: "Good Provider",
         id: 1,
         color: "black",
-        billingPeriod: 1
+        billingPeriod: 1,
+        nickname: "nick1Prov"
       },
       {
         userId:1,
@@ -96,7 +102,8 @@ export class PersonsService {
         notes: "Good Provider",
         id: 1,
         color: "black",
-        billingPeriod: 1
+        billingPeriod: 1,
+        nickname: "nick2Prov"
       },
       {
         userId:1,
@@ -106,7 +113,8 @@ export class PersonsService {
         notes: "Good Provider",
         id: 1,
         color: "black",
-        billingPeriod: 1
+        billingPeriod: 1,
+        nickname: "nick3Prov"
       }]
   }
 }
