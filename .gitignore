@@ -47,3 +47,6 @@ src/app/tasks/task.js
 src/system-config.js
 src/app/tasks/task-list/shared/index.js
 src/app/tasks/task-list/index.js
+src/app/persons/customer.js
+src/app/persons/user.js
+src/app/persons/provider.js
