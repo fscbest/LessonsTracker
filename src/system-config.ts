@@ -38,6 +38,7 @@ const barrels: string[] = [
   'app/task/tasks-list',
   'app/tasks/tasks-list',
   'app/tasks/task',
+  'app/tasks/task-template',
   /** @cli-barrel */
 ];
 

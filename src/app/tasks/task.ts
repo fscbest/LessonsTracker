@@ -9,3 +9,12 @@ export class Task {
   id: number;
   color: string;
 }
+
+export class TaskTemplate {
+  title: string;
+  notes: string;
+  price: number;
+  id: number;
+  customerId: number;
+  providerId: number;
+}

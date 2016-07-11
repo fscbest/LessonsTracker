@@ -39,3 +39,5 @@ src/*/*.js
 *.component.spec.js
 *.service.js
 *.service.spec.js
+
+src/app/tasks/task.js
