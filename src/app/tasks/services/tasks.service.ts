@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class TasksService {
@@ -6,8 +7,8 @@ export class TasksService {
   constructor() {
   }
 
-  getTaskList() {
-    return [
+  getTaskList(userId, customerId){
+    let taskList = [
       {
         userId: 1,
         customerId: 1,
@@ -41,6 +42,7 @@ export class TasksService {
         id: 3,
         color: "blue"
       }
-    ]
+    ];
+    return taskList;
   }
 }

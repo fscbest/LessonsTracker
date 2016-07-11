@@ -49,7 +49,7 @@ export class PersonsService {
         firstName: "Second",
         lastName: "Child",
         notes: "Good child",
-        id: 1,
+        id: 2,
         color: "black",
         nickname: "nick2stCh"
       },
@@ -59,7 +59,7 @@ export class PersonsService {
         firstName: "3d",
         lastName: "Child",
         notes: "Good child",
-        id: 1,
+        id: 3,
         color: "black",
         nickname: "nick3stCh"
       }]

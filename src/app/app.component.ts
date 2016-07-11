@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import {HomeComponent} from './home.component';
 import { NavbarComponent} from './navbar/navbar.component';
@@ -11,7 +12,7 @@ import {User} from "./persons/user";
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [TaskListComponent, NavbarComponent],
+  directives: [TaskListComponent, NavbarComponent, ROUTER_DIRECTIVES],
   providers: [PersonsService]
 
 })

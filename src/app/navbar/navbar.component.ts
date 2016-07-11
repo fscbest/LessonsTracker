@@ -17,13 +17,11 @@ export class NavbarComponent implements OnInit {
   constructor(private _router: Router){
   }
 
-  //isCurrentRoute(route){
-  //  var instruction = this._router.generate(route);
-  //  return this._router.isRouteActive(instruction);
-  //
-  //}
-
   ngOnInit() {
+  }
+
+  onClick(nickName){
+    this._router.navigate(['/task-list', nickName.userId, nickName.customerId]);
   }
 
 }
