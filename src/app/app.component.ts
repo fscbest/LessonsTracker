@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import {HomeComponent} from './home.component';
 import { NavbarComponent} from './navbar/navbar.component';
 import { PersonsService } from'./persons/services/persons.service';
 import { TaskListComponent } from './tasks/task-list/task-list.component';
 import {User} from "./persons/user";
-
 
 @Component({
   moduleId: module.id,
