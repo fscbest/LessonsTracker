@@ -41,6 +41,6 @@ export class TaskListComponent implements OnInit {
 
 
   ngOnDestroy() {
-    //this.sub.unsubscribe();
+    this.sub.unsubscribe();
   }
 }

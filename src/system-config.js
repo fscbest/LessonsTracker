@@ -33,6 +33,8 @@ var barrels = [
     'app/tasks/task',
     'app/tasks/task-template',
     'app/navbar',
+    'app/customer-form',
+    'app/persons/customer-form',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {

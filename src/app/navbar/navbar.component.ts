@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
     customerId: 0,
     nick: "dummy"
   }];
+  userId = this.nickNameList[0].userId;
   constructor(private _router: Router){
   }
 
@@ -21,7 +22,12 @@ export class NavbarComponent implements OnInit {
   }
 
   onClick(nickName){
-    this._router.navigate(['/task-list', nickName.userId, nickName.customerId]);
+    this._router.navigate(['/', this.userId, '/task-list', nickName.userId, nickName.customerId]);
+  }
+
+  onAddNewClick(){
+    console.log("onAddNewClick " + this.userId);
+    this._router.navigate(['/', this.userId, '/customer/add-new']);
   }
 
 }
