@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ROUTER_DIRECTIVES, CanDeactivate } from '@angular/router';
-import {ControlGroup, FormBuilder} from '@angular/common';
-import {Validators} from '@angular/common';
+import { NgForm } from '@angular/forms';
 
 import { Customer } from './../customer';
 import { PersonsService } from './../services/persons.service';
@@ -16,57 +15,60 @@ import { PersonsService } from './../services/persons.service';
   directives: [ ROUTER_DIRECTIVES ]
 })
 export class CustomerFormComponent implements OnInit {
-  form: ControlGroup;
   private sub: any;
-  title: String;
-  customer = new Customer();
   id: string;
+  title: String;
+  modelCustomer = new Customer();
+  submitted = false;
+  active = true;
 
   constructor(
-    private _fb: FormBuilder,
     private _route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.form = this._fb.group({
-      firstName: ['', Validators.compose([
-        Validators.required
-      ])],
-      lastName: ['', Validators.compose([
-        Validators.required
-      ])]
-    });
+    console.log("jhg11" + this.modelCustomer.firstName);
 
     this.sub = this._route.params.subscribe(params => {
       this.id = params['userId'].toString();
       let custId = params['customerId'] ? params['customerId'].toString() : undefined;
-      this.customer.id = custId;
+      this.modelCustomer.id = custId;
       console.log("CustomerFormComponent-> ngOnInit:");
       console.log("\t url parameters: userId = " + this.id);
-      console.log("\t url parameters: customerId = " + this.customer.id);
+      console.log("\t url parameters: customerId = " + this.modelCustomer.id);
     });
 
-    this.title = this.customer.id ? "Edit User" : "New User";
+    this.title = this.modelCustomer.id ? "Edit User" : "New User";
 
-    if(!this.customer.id){
+    if(!this.modelCustomer.id){
       return;
     }
 
   }
 
   routerCanDeactivate(){
-    if(this.form.dirty){
+/*    if(this.form.dirty){
       return confirm("The form is changed. Are you sure?");
     }
-    return true;
+    return true;*/
   }
 
-  save(){
+  onSubmit(){
     console.log("CustomerFormComponent-> save");
+    this.submitted = true;
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
+  onClear() {
+    this.modelCustomer = new Customer();
+    this.active = false;
+    setTimeout(() => this.active = true, 0);
+  }
+
+
+  // TODO: Remove this when we're done
+  //get diagnostic() { return JSON.stringify(this.modelCustomer); }
 }

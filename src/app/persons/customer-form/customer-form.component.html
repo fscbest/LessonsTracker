@@ -1,5 +1,41 @@
-<h1>{{ title }}</h1>
-<div class="row">
+<div class="container">
+  <h1>{{ title }}</h1>
+  <div class="row col-md-6 well">
+    <form *ngIf="active" (ngSubmit)="onSubmit()" #customerForm="ngForm">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input id="firstName" type="text" class="form-control"
+               required
+               [(ngModel)]="modelCustomer.firstName"
+               name="firstName"
+               #firstName="ngModel">
+        <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+          First Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" type="text" class="form-control"
+               [(ngModel)]="modelCustomer.lastName"
+               name="lastName">
+      </div>
+
+      <div class="row">
+        <div class="pull-right">
+          <button type="button" class="btn btn-default" (click)="onClear()" [disabled]="!customerForm.form.dirty">Clear</button>
+          <button type="submit" class="btn btn-default" [disabled]="!customerForm.form.valid">Submit</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+<!--<div class="row">
   <div class="col-md-6 well">
     <form [ngFormModel]="form" (ngSubmit)="save()">
       <fieldset>
@@ -28,4 +64,4 @@
       <button  type="submit"class="btn btn-primary" [disabled]="!form.valid">Save</button>
     </form>
   </div>
-</div>
+</div>-->
