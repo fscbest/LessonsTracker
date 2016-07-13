@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ROUTER_DIRECTIVES, CanDeactivate } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
 import { Customer } from './../customer';
 import { PersonsService } from './../services/persons.service';
@@ -21,10 +22,17 @@ export class CustomerFormComponent implements OnInit {
   modelCustomer = new Customer();
   submitted = false;
   active = true;
+  item: FirebaseObjectObservable<any>;
 
   constructor(
-    private _route: ActivatedRoute
-  ) {}
+    private _route: ActivatedRoute,
+    private af: AngularFire
+  ) {
+    this.item = af.database.object('/item');
+  }
+  login() {
+    this.af.auth.login();
+  }
 
   ngOnInit() {
     console.log("jhg11" + this.modelCustomer.firstName);
@@ -55,6 +63,8 @@ export class CustomerFormComponent implements OnInit {
 
   onSubmit(){
     console.log("CustomerFormComponent-> save");
+    //this.item.set({cust:this.modelCustomer});
+    this.item.set({ name2: 'newName2', name3: 'newName3' });
     this.submitted = true;
   }
 

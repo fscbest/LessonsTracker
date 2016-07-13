@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import {HomeComponent} from './home.component';
 import { NavbarComponent} from './navbar/navbar.component';
