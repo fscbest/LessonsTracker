@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ROUTER_DIRECTIVES, CanDeactivate } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
+import { Observable } from 'rxjs';
+import  'rxjs/add/operator/map';
+
 
 import { Customer } from './../customer';
 import { PersonsService } from './../services/persons.service';
+
 
 
 @Component({
@@ -23,12 +27,14 @@ export class CustomerFormComponent implements OnInit {
   submitted = false;
   active = true;
   item: FirebaseObjectObservable<any>;
+  people: FirebaseListObservable<any>;
 
   constructor(
     private _route: ActivatedRoute,
     private af: AngularFire
   ) {
     this.item = af.database.object('/item');
+    this.people = af.database.list('/people');
   }
   login() {
     this.af.auth.login();
@@ -63,8 +69,8 @@ export class CustomerFormComponent implements OnInit {
 
   onSubmit(){
     console.log("CustomerFormComponent-> save");
-    //this.item.set({cust:this.modelCustomer});
-    this.item.set({ name2: 'newName2', name3: 'newName3' });
+
+    this.people.push({ firstName: 'newName2', lastName: 'newName3' });
     this.submitted = true;
   }
 
