@@ -70,10 +70,10 @@ export class CustomerFormComponent implements OnInit {
   onSubmit(){
     console.log("CustomerFormComponent-> save");
     //this.modelCustomer.addNew();
-    this.people.push(this.modelCustomer);
-    //TODO: Add this to "DO after saving successfull:
-        this.submitted = true;
-        this.onClear();
+    this.people.push(this.modelCustomer).then(()=> {
+      this.submitted = true;
+      this.onClear();
+    });
   }
 
   ngOnDestroy() {
