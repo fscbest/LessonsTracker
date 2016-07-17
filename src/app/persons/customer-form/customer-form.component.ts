@@ -46,7 +46,7 @@ export class CustomerFormComponent implements OnInit {
     this.sub = this._route.params.subscribe(params => {
       this.id = params['userId'].toString();
       let custId = params['customerId'] ? params['customerId'].toString() : undefined;
-      this.modelCustomer.id = custId;
+      //this.modelCustomer.id = 5;
       console.log("CustomerFormComponent-> ngOnInit:");
       console.log("\t url parameters: userId = " + this.id);
       console.log("\t url parameters: customerId = " + this.modelCustomer.id);
@@ -69,9 +69,11 @@ export class CustomerFormComponent implements OnInit {
 
   onSubmit(){
     console.log("CustomerFormComponent-> save");
-
-    this.people.push({ firstName: 'newName2', lastName: 'newName3' });
-    this.submitted = true;
+    //this.modelCustomer.addNew();
+    this.people.push(this.modelCustomer);
+    //TODO: Add this to "DO after saving successfull:
+        this.submitted = true;
+        this.onClear();
   }
 
   ngOnDestroy() {
