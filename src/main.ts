@@ -20,14 +20,18 @@ bootstrap(AppComponent, [
   provideForms(),
   FIREBASE_PROVIDERS,
   defaultFirebase({
-    apiKey: "AIzaSyAxZzbqNpMAxmyenlXvDypKtKulq1u5tMI",
+    /*apiKey: "AIzaSyAxZzbqNpMAxmyenlXvDypKtKulq1u5tMI",
     authDomain: "lessonstracker.firebaseapp.com",
     databaseURL: "https://lessonstracker.firebaseio.com",
-    storageBucket: "lessonstracker.appspot.com",
+    storageBucket: "lessonstracker.appspot.com",*/
+    apiKey: "AIzaSyCQdLqgjGt2g_c_f4pJlhvMX1x3syI8JVU",
+    authDomain: "logintest-a97e9.firebaseapp.com",
+    databaseURL: "https://logintest-a97e9.firebaseio.com",
+    storageBucket: "logintest-a97e9.appspot.com",
   }),
   firebaseAuthConfig({
-    provider: AuthProviders.Anonymous,
-    method: AuthMethods.Anonymous
+    provider: AuthProviders.Password,
+    method: AuthMethods.Password
   })
 ])
   /*.catch((err: any) => console.error(err))*/;

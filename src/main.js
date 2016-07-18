@@ -13,14 +13,18 @@ platform_browser_dynamic_1.bootstrap(_1.AppComponent, [
     forms_1.provideForms(),
     angularfire2_1.FIREBASE_PROVIDERS,
     angularfire2_1.defaultFirebase({
-        apiKey: "AIzaSyAxZzbqNpMAxmyenlXvDypKtKulq1u5tMI",
+        /*apiKey: "AIzaSyAxZzbqNpMAxmyenlXvDypKtKulq1u5tMI",
         authDomain: "lessonstracker.firebaseapp.com",
         databaseURL: "https://lessonstracker.firebaseio.com",
-        storageBucket: "lessonstracker.appspot.com"
+        storageBucket: "lessonstracker.appspot.com",*/
+        apiKey: "AIzaSyCQdLqgjGt2g_c_f4pJlhvMX1x3syI8JVU",
+        authDomain: "logintest-a97e9.firebaseapp.com",
+        databaseURL: "https://logintest-a97e9.firebaseio.com",
+        storageBucket: "logintest-a97e9.appspot.com"
     }),
     angularfire2_1.firebaseAuthConfig({
-        provider: angularfire2_1.AuthProviders.Anonymous,
-        method: angularfire2_1.AuthMethods.Anonymous
+        provider: angularfire2_1.AuthProviders.Password,
+        method: angularfire2_1.AuthMethods.Password
     })
 ]);
 //# sourceMappingURL=main.js.map

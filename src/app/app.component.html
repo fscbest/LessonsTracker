@@ -1,4 +1,14 @@
+<button (click)="signUp()">signUp</button>
 
+<div>
+
+  <span *ngIf="af.auth | async">
+    <button (click)="af.auth.logout()">Log out</button>
+  </span>
+  <span *ngIf="!(af.auth | async)">
+    <button (click)="login()">Log in</button>
+  </span>
+</div>
 <div>
   <app-navbar [nickNames]="nickNameList"></app-navbar>
 </div>

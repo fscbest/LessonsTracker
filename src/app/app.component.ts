@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseAuth } from 'angularfire2';
 
 import {HomeComponent} from './home.component';
 import { NavbarComponent} from './navbar/navbar.component';
@@ -22,13 +22,33 @@ export class AppComponent implements OnInit{
   user = {};//new User();
   customerList = [];
   nickNameList = [];
+  email = "roman1@gmail.com";
+  pw = "123456";
 
-  constructor(private _personsService: PersonsService ){
+  constructor(private _personsService: PersonsService,
+              public af: AngularFire, private auth: FirebaseAuth){
 
   }
   ngOnInit(){
     this.user = this.getUserProfile(); //TODO: Get CURRENT user
     this.customerList = this.getCustomerList();
+  }
+
+  signUp() {
+    var creds: any = {email: this.email, password: this.pw};
+    this.af.auth.createUser(creds);
+  }
+
+  login() {
+    var creds: any = {email: this.email, password: this.pw};
+          this.auth.login(creds).then(
+            (auth) => {
+              console.log(auth);
+            },
+            (err) => {
+              console.error(err);
+            }
+          );
   }
 
   private getUserProfile(){
