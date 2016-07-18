@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 import { AngularFire, FirebaseListObservable, FirebaseAuth } from 'angularfire2';
 
 import {HomeComponent} from './home.component';
@@ -26,7 +26,8 @@ export class AppComponent implements OnInit{
   pw = "123456";
 
   constructor(private _personsService: PersonsService,
-              public af: AngularFire, private auth: FirebaseAuth){
+              public af: AngularFire, private auth: FirebaseAuth,
+              private _router: Router){
 
   }
   ngOnInit(){
@@ -44,6 +45,7 @@ export class AppComponent implements OnInit{
           this.auth.login(creds).then(
             (auth) => {
               console.log(auth);
+              this._router.navigate(['/']);
             },
             (err) => {
               console.error(err);
