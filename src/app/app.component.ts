@@ -28,6 +28,16 @@ export class AppComponent implements OnInit{
   constructor(private _personsService: PersonsService,
               public af: AngularFire, private auth: FirebaseAuth,
               private _router: Router){
+    //auth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
+    //  public void onAuthStateChanged(FirebaseAuth firebaseAuth) {
+    //    FirebaseUser user = auth.getCurrentUser();
+    //    if(user != null){
+    //      console.log("User is signed in: " + user.getDisplayName());
+    //    }else{
+    //      console.log("User is signed out");
+    //    }
+    //  }
+    //});
 
   }
   ngOnInit(){

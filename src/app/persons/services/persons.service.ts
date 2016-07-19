@@ -12,7 +12,9 @@ export class PersonsService {
       firstName: "John",
       lastName: "Black",
       notes: "Good teacher",
-      id: 1
+      id: 1,
+      email:"some@ss.com",
+      password:"222"
     }
   }
 
