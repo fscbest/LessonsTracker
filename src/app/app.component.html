@@ -39,6 +39,8 @@
 <div>
   <app-navbar [nickNames]="nickNameList"></app-navbar>
 </div>
+
+<p *ngIf="af.auth | async">Loggggeeed</p>
 <div class="div container">
   <router-outlet></router-outlet>
 </div>

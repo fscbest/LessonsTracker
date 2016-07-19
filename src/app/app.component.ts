@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 import { AngularFire, FirebaseListObservable, FirebaseAuth } from 'angularfire2';
 
@@ -25,8 +25,9 @@ export class AppComponent implements OnInit{
   email = "roman1@gmail.com";
   pw = "123456";
 
-  constructor(private _personsService: PersonsService,
-              public af: AngularFire, private auth: FirebaseAuth,
+  constructor(@Inject(FirebaseAuth) public auth: FirebaseAuth,
+              private _personsService: PersonsService,
+              public af: AngularFire,
               private _router: Router){
     //auth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
     //  public void onAuthStateChanged(FirebaseAuth firebaseAuth) {
