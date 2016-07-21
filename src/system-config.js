@@ -43,6 +43,7 @@ var barrels = [
     'app/navbar',
     'app/customer-form',
     'app/persons/customer-form',
+    'app/utils/login',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {

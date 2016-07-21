@@ -1,46 +1,12 @@
-<div class="container" >
-  <div class="title">
-    Welcome
+<app-login></app-login>
+<div *ngIf="af.auth | async">
+  <div>
+    <!--{{authState}}-->
   </div>
-  <div class="panel-body">
-    <div class="row">
-      <div class="input-field col s12">
-        <input [(ngModel)]="user.email" id="email"
-               type="email" class="validate">
-        <label for="email">Email</label>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="input-field col s12">
-        <input [(ngModel)]="user.password" id="password"
-               type="password" class="validate">
-        <label for="password">Password</label>
-      </div>
-    </div>
-
-    <span>{{errorMsg}}</span>
-    <button (click)="login()"
-            class="btn waves-effect waves-light"
-            type="submit" name="action">Login</button>
+  <div>
+    <app-navbar [nickNames]="nickNameList"></app-navbar>
   </div>
 </div>
-<button (click)="signUp()">signUp</button>
-
-<div>
-
-  <span *ngIf="af.auth | async">
-    <button (click)="af.auth.logout()">Log out</button>
-  </span>
-  <span *ngIf="!(af.auth | async)">
-    <button (click)="login()">Log in</button>
-  </span>
-</div>
-<div>
-  <app-navbar [nickNames]="nickNameList"></app-navbar>
-</div>
-
-<p *ngIf="af.auth | async">Loggggeeed</p>
 <div class="div container">
   <router-outlet></router-outlet>
 </div>

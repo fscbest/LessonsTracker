@@ -1,19 +1,19 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
-import { AngularFire, FirebaseListObservable, FirebaseAuth } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseAuth, FirebaseAuthState } from 'angularfire2';
 
 import {HomeComponent} from './home.component';
+import { LoginComponent } from './utils/login';
 import { NavbarComponent} from './navbar/navbar.component';
 import { PersonsService } from'./persons/services/persons.service';
 import { TaskListComponent } from './tasks/task-list/task-list.component';
 import {User} from "./persons/user";
-
 @Component({
   moduleId: module.id,
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [TaskListComponent, NavbarComponent, ROUTER_DIRECTIVES],
+  directives: [LoginComponent, TaskListComponent, NavbarComponent, ROUTER_DIRECTIVES],
   providers: [PersonsService]
 
 })
@@ -22,13 +22,16 @@ export class AppComponent implements OnInit{
   user = {};//new User();
   customerList = [];
   nickNameList = [];
-  email = "roman1@gmail.com";
-  pw = "123456";
+  private authState: FirebaseAuthState = null;
 
   constructor(@Inject(FirebaseAuth) public auth: FirebaseAuth,
               private _personsService: PersonsService,
               public af: AngularFire,
               private _router: Router){
+    auth.subscribe((state: FirebaseAuthState) => {
+      this.authState = state;
+      //console.log("state " + state);
+    });
     //auth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
     //  public void onAuthStateChanged(FirebaseAuth firebaseAuth) {
     //    FirebaseUser user = auth.getCurrentUser();
@@ -46,23 +49,7 @@ export class AppComponent implements OnInit{
     this.customerList = this.getCustomerList();
   }
 
-  signUp() {
-    var creds: any = {email: this.email, password: this.pw};
-    this.af.auth.createUser(creds);
-  }
 
-  login() {
-    var creds: any = {email: this.email, password: this.pw};
-          this.auth.login(creds).then(
-            (auth) => {
-              console.log(auth);
-              this._router.navigate(['/']);
-            },
-            (err) => {
-              console.error(err);
-            }
-          );
-  }
 
   private getUserProfile(){
     var user = this._personsService.getUserProfile();

@@ -1,0 +1,53 @@
+<span *ngIf="af.auth | async">
+    <button (click)="af.auth.logout()">Log out</button>
+  </span>
+<span *ngIf="!(af.auth | async)">
+    <button (click) = "status = 'LogIn'">Log in</button>
+  </span>
+
+<button *ngIf="status == 'loggedOut'"(click)="signUp()">signUp</button>
+
+<span *ngIf = "status == 'LogIn'" class="container" >
+  <div class="title">
+    Welcome
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="input-field col s12">
+        <input [(ngModel)]="email" id="email"
+               type="email" class="validate">
+        <label for="email">Email</label>
+        <input [(ngModel)]="password" id="password"
+               type="password" class="validate">
+        <label for="password">Password</label>
+        <button (click)="login()"
+                class="btn waves-effect waves-light"
+                type="submit" name="action">Login</button>
+      </div>
+    </div>
+
+   <!-- <div class="row">
+      <div class="input-field col s12">
+        <input [(ngModel)]="password" id="password"
+               type="password" class="validate">
+        <label for="password">Password</label>
+      </div>
+    </div>-->
+
+    <!--<span>{{errorMsg}}</span>
+    <button (click)="login()"
+            class="btn waves-effect waves-light"
+            type="submit" name="action">Login</button>-->
+  </div>
+</span>
+<!--<button (click)="signUp()">signUp</button>-->
+
+<!--<div>
+
+  <span *ngIf="af.auth | async">
+    <button (click)="af.auth.logout()">Log out</button>
+  </span>
+  <span *ngIf="!(af.auth | async)">
+    <button (click) = "status = 'LogIn'">Log in</button>
+  </span>
+</div>-->
